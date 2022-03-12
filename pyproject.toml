@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "devicons"
+version = "0.1.0"
+description = "A set of icons representing programming languages, designing & development tools."
+authors = ["Eliaz Bobadilla <eliaz.bobadilladev@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/UltiRequiem/devicons-python"
+repository = "https://github.com/UltiRequiem/devicons-python"
+keywords = ["utilities", "utils", "aesthetic", "icons"]
+include = ["LICENSE"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
