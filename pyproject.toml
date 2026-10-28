@@ -1,18 +1,48 @@
-[tool.poetry]
-name = "devicons"
-version = "0.1.0"
-description = "A set of icons representing programming languages, designing & development tools."
-authors = ["Eliaz Bobadilla <eliaz.bobadilladev@gmail.com>"]
-license = "MIT"
-readme = "README.md"
-homepage = "https://github.com/UltiRequiem/devicons-python"
-repository = "https://github.com/UltiRequiem/devicons-python"
-keywords = ["utilities", "utils", "aesthetic", "icons"]
-include = ["LICENSE"]
-
-[tool.poetry.dependencies]
-python = "^3.7"
-
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "devicons"
+version = "0.2.0"
+description = "File and folder icons for the terminal, as Nerd Font glyphs."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Eliaz Bobadilla", email = "eliaz.bobadilladev@gmail.com" }]
+requires-python = ">=3.9"
+keywords = ["icons", "nerd-fonts", "devicons", "terminal", "cli", "file-icons"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Topic :: Terminals",
+  "Typing :: Typed",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/UltiRequiem/devicons-python"
+Documentation = "https://github.com/UltiRequiem/devicons-python#readme"
+Issues = "https://github.com/UltiRequiem/devicons-python/issues"
+Changelog = "https://github.com/UltiRequiem/devicons-python/blob/main/CHANGELOG.md"
+
+[project.scripts]
+devicons = "devicons.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.8"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/devicons"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
